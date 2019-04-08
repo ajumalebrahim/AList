@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol UserListVMDelegate {
+    func willCallUserListAPI()
+    func didSuccesUserListAPI()
+    func didFailedUserListAPI()
+}
+
+class UserListVM {
+    // MARK: -  variables
+    var delegate: UserListVMDelegate?
+    
+    // MARK: - 
+    func callUserListAPI() {
+        delegate?.willCallUserListAPI()
+    }
+}

@@ -13,22 +13,36 @@ class UserListVC: UIViewController {
     // MARK: - OutLets
     @IBOutlet private weak var tblVwUserList: UITableView!
     
+    // MARK: -
+    var vm = UserListVM()
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupVM()
+        vm.callUserListAPI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private methods
+    private func setupVM() {
+        vm.delegate = self
     }
-    */
 
+}
+
+extension UserListVC: UserListVMDelegate {
+    func willCallUserListAPI() {
+        // show loading
+    }
+    
+    func didSuccesUserListAPI() {
+        // hide loading
+    }
+    
+    func didFailedUserListAPI() {
+        // hide loading
+    }
+    
+    
 }
