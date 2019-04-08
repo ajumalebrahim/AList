@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UserListCell: UITableViewCell {
 
@@ -47,6 +48,7 @@ class UserListCell: UITableViewCell {
     
     private func config() {
         self.lblName.text = user?.name
+        self.imgvwAvatar.sd_setImage(with: URL(string:user?.icon ?? ""))
     }
     
 }
