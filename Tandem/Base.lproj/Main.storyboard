@@ -51,7 +51,7 @@
                     <navigationItem key="navigationItem" title="Users info" id="q2O-7U-RaY"/>
                     <connections>
                         <outlet property="tblVwUserList" destination="hl1-te-2Qa" id="I4e-kJ-i3s"/>
-                        <segue destination="Xu0-QG-4sd" kind="show" id="Sbv-c4-z07"/>
+                        <segue destination="Xu0-QG-4sd" kind="show" identifier="showAlbum" id="Sbv-c4-z07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

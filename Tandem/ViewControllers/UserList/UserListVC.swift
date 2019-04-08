@@ -16,7 +16,7 @@ class UserListVC: UIViewController {
     
     // MARK: -
     var vm = UserListVM()
-    private var userList: UserList?
+    private var userList: [UserListElement]?
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +30,21 @@ class UserListVC: UIViewController {
     private func setupView() {
         self.vm.delegate = self
         self.tblVwUserList.dataSource = self
+        self.tblVwUserList.delegate = self
         self.tblVwUserList.register(UserListCell.nib, forCellReuseIdentifier: UserListCell.identifier)
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showAlbum") {
+            guard let row = (sender as? NSIndexPath)?.row else {
+                return
+            }
+            let user = self.userList?[row]
+            let vc = segue.destination as? UserAlbumsVC
+            vc?.albums = user?.album
+            
+        }
     }
 
 }
@@ -58,17 +72,21 @@ extension UserListVC: UserListVMDelegate {
     }
 }
 
-extension UserListVC: UITableViewDataSource {
+extension UserListVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userList?.user.count ?? 0
+        return self.userList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier) as? UserListCell {
-            cell.user = self.userList?.user[indexPath.row]
+            cell.user = self.userList?[indexPath.row]
             return cell
         } else {
             return UserListCell()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showAlbum", sender: indexPath)
     }
 }

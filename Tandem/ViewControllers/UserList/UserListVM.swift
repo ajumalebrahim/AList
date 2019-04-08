@@ -32,7 +32,7 @@ class UserListVM {
             if let user = response.result.value {
                 self.delegate?.didSuccesUserListAPI(users: user)
             } else {
-                 self.delegate?.didFailedUserListAPI(message: "Something went wrong...")
+                self.delegate?.didFailedUserListAPI(message: "Something went wrong...")
             }
         }
     }

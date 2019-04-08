@@ -24,7 +24,6 @@ class UserAlbumsVC: UIViewController {
     
     // MARK: - Private methods
     private func setupView() {
-//        self.vm.delegate = self
         self.collectionVw.dataSource = self
         self.collectionVw.register(AlbumCell.nib, forCellWithReuseIdentifier: AlbumCell.identifier)
     }
@@ -37,10 +36,10 @@ extension UserAlbumsVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? AlbumCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AlbumCell.identifier, for: indexPath) as? AlbumCell else {
              return AlbumCell()
         }
-        
+        cell.album = albums?[indexPath.row]
         return cell
     }
     

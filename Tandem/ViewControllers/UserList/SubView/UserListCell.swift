@@ -25,7 +25,7 @@ class UserListCell: UITableViewCell {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    var user: User? {
+    var user: UserListElement? {
         didSet {
             config()
         }

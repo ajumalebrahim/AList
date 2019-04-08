@@ -9,11 +9,9 @@
 import Foundation
 import Alamofire
 
-struct UserList: Codable {
-    let user: [User]
-}
+typealias UserList = [UserListElement]
 
-struct User: Codable {
+struct UserListElement: Codable {
     let id: Int
     let name: String
     let icon: String
