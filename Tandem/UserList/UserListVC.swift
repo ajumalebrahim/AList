@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class UserListVC: UIViewController {
     
@@ -39,17 +40,20 @@ extension UserListVC: UserListVMDelegate {
     
     func willCallUserListAPI() {
         // show loading
+        MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
     func didSuccesUserListAPI(users: User) {
         // hide loading
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
         userList = users
         self.tblVwUserList.reloadData()
     }
     
     func didFailedUserListAPI(message: String) {
         // hide loading
+        MBProgressHUD.hide(for: self.view, animated: true)
+        
         // show message
     }
 }
