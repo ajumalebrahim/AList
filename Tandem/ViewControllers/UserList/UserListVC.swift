@@ -16,7 +16,7 @@ class UserListVC: UIViewController {
     
     // MARK: -
     var vm = UserListVM()
-    private var userList: User?
+    private var userList: UserList?
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,7 @@ extension UserListVC: UserListVMDelegate {
         MBProgressHUD.showAdded(to: self.view, animated: true)
     }
     
-    func didSuccesUserListAPI(users: User) {
+    func didSuccesUserListAPI(users: UserList) {
         // hide loading
         MBProgressHUD.hide(for: self.view, animated: true)
         userList = users
@@ -60,12 +60,12 @@ extension UserListVC: UserListVMDelegate {
 
 extension UserListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userList?.count ?? 0
+        return self.userList?.user.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier) as? UserListCell {
-            cell.user = self.userList?[indexPath.row]
+            cell.user = self.userList?.user[indexPath.row]
             return cell
         } else {
             return UserListCell()

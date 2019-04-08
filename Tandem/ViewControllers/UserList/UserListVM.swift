@@ -11,7 +11,7 @@ import Alamofire
 
 protocol UserListVMDelegate {
     func willCallUserListAPI()
-    func didSuccesUserListAPI(users: User)
+    func didSuccesUserListAPI(users: UserList)
     func didFailedUserListAPI(message: String)
 }
 
@@ -28,7 +28,7 @@ class UserListVM {
             return
         }
         
-        Alamofire.request(url).responseUser { response in
+        Alamofire.request(url).responseUserList { response in
             if let user = response.result.value {
                 self.delegate?.didSuccesUserListAPI(users: user)
             } else {

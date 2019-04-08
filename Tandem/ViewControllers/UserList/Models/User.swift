@@ -7,15 +7,22 @@
 //
 
 import Foundation
-
-import Foundation
 import Alamofire
 
-typealias User = [UserElement]
+struct UserList: Codable {
+    let user: [User]
+}
 
-struct UserElement: Codable {
+struct User: Codable {
     let id: Int
-    let name, icon: String
+    let name: String
+    let icon: String
+    let album: [Album]
+}
+
+struct Album: Codable {
+    let id: Int
+    let url: String
 }
 
 fileprivate func newJSONDecoder() -> JSONDecoder {
@@ -55,8 +62,7 @@ extension DataRequest {
     }
     
     @discardableResult
-    func responseUser(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<User>) -> Void) -> Self {
+    func responseUserList(queue: DispatchQueue? = nil, completionHandler: @escaping (DataResponse<UserList>) -> Void) -> Self {
         return responseDecodable(queue: queue, completionHandler: completionHandler)
     }
 }
-

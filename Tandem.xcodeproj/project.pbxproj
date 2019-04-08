@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0828ECB0225BA0E900D0EC8E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828ECAF225BA0E900D0EC8E /* User.swift */; };
 		0828ECB3225BAB9500D0EC8E /* UserAlbumsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828ECB2225BAB9500D0EC8E /* UserAlbumsVC.swift */; };
+		0828ECB8225BAFE700D0EC8E /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828ECB6225BAFE700D0EC8E /* AlbumCell.swift */; };
+		0828ECB9225BAFE700D0EC8E /* AlbumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0828ECB7225BAFE700D0EC8E /* AlbumCell.xib */; };
 		08824040225B8F8900ABCEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882403F225B8F8900ABCEE0 /* AppDelegate.swift */; };
 		08824045225B8F8900ABCEE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08824043225B8F8900ABCEE0 /* Main.storyboard */; };
 		08824047225B8F8B00ABCEE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08824046225B8F8B00ABCEE0 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		0828ECAF225BA0E900D0EC8E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0828ECB2225BAB9500D0EC8E /* UserAlbumsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsVC.swift; sourceTree = "<group>"; };
+		0828ECB6225BAFE700D0EC8E /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
+		0828ECB7225BAFE700D0EC8E /* AlbumCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumCell.xib; sourceTree = "<group>"; };
 		0882403C225B8F8900ABCEE0 /* Tandem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tandem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882403F225B8F8900ABCEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08824044225B8F8900ABCEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 		0828ECB1225BAB5C00D0EC8E /* UserAlbums */ = {
 			isa = PBXGroup;
 			children = (
+				0828ECB5225BAF9000D0EC8E /* SubView */,
 				0828ECB2225BAB9500D0EC8E /* UserAlbumsVC.swift */,
 			);
 			path = UserAlbums;
@@ -73,6 +78,15 @@
 				08824056225B90AD00ABCEE0 /* UserList */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0828ECB5225BAF9000D0EC8E /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				0828ECB6225BAFE700D0EC8E /* AlbumCell.swift */,
+				0828ECB7225BAFE700D0EC8E /* AlbumCell.xib */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 		08824033225B8F8900ABCEE0 = {
@@ -205,6 +219,7 @@
 			files = (
 				0882405B225B916E00ABCEE0 /* UserListCell.xib in Resources */,
 				0882404A225B8F8B00ABCEE0 /* LaunchScreen.storyboard in Resources */,
+				0828ECB9225BAFE700D0EC8E /* AlbumCell.xib in Resources */,
 				08824047225B8F8B00ABCEE0 /* Assets.xcassets in Resources */,
 				08824045225B8F8900ABCEE0 /* Main.storyboard in Resources */,
 			);
@@ -271,6 +286,7 @@
 				0882405A225B916E00ABCEE0 /* UserListCell.swift in Sources */,
 				0828ECB3225BAB9500D0EC8E /* UserAlbumsVC.swift in Sources */,
 				08824054225B909500ABCEE0 /* UserListVM.swift in Sources */,
+				0828ECB8225BAFE700D0EC8E /* AlbumCell.swift in Sources */,
 				08824040225B8F8900ABCEE0 /* AppDelegate.swift in Sources */,
 				0828ECB0225BA0E900D0EC8E /* User.swift in Sources */,
 				08824052225B907000ABCEE0 /* UserListVC.swift in Sources */,
