@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		08824040225B8F8900ABCEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882403F225B8F8900ABCEE0 /* AppDelegate.swift */; };
-		08824042225B8F8900ABCEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08824041225B8F8900ABCEE0 /* ViewController.swift */; };
 		08824045225B8F8900ABCEE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08824043225B8F8900ABCEE0 /* Main.storyboard */; };
 		08824047225B8F8B00ABCEE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08824046225B8F8B00ABCEE0 /* Assets.xcassets */; };
 		0882404A225B8F8B00ABCEE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08824048225B8F8B00ABCEE0 /* LaunchScreen.storyboard */; };
+		08824052225B907000ABCEE0 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08824051225B907000ABCEE0 /* UserListVC.swift */; };
+		08824054225B909500ABCEE0 /* UserListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08824053225B909500ABCEE0 /* UserListVM.swift */; };
+		0882405A225B916E00ABCEE0 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08824058225B916E00ABCEE0 /* UserListCell.swift */; };
+		0882405B225B916E00ABCEE0 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08824059225B916E00ABCEE0 /* UserListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0882403C225B8F8900ABCEE0 /* Tandem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tandem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882403F225B8F8900ABCEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		08824041225B8F8900ABCEE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		08824044225B8F8900ABCEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08824046225B8F8B00ABCEE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08824049225B8F8B00ABCEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0882404B225B8F8B00ABCEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08824051225B907000ABCEE0 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
+		08824053225B909500ABCEE0 /* UserListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVM.swift; sourceTree = "<group>"; };
+		08824058225B916E00ABCEE0 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		08824059225B916E00ABCEE0 /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +61,32 @@
 			isa = PBXGroup;
 			children = (
 				0882403F225B8F8900ABCEE0 /* AppDelegate.swift */,
-				08824041225B8F8900ABCEE0 /* ViewController.swift */,
 				08824043225B8F8900ABCEE0 /* Main.storyboard */,
 				08824046225B8F8B00ABCEE0 /* Assets.xcassets */,
 				08824048225B8F8B00ABCEE0 /* LaunchScreen.storyboard */,
 				0882404B225B8F8B00ABCEE0 /* Info.plist */,
+				08824056225B90AD00ABCEE0 /* UserList */,
 			);
 			path = Tandem;
+			sourceTree = "<group>";
+		};
+		08824056225B90AD00ABCEE0 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				08824057225B914300ABCEE0 /* SubView */,
+				08824051225B907000ABCEE0 /* UserListVC.swift */,
+				08824053225B909500ABCEE0 /* UserListVM.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		08824057225B914300ABCEE0 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				08824058225B916E00ABCEE0 /* UserListCell.swift */,
+				08824059225B916E00ABCEE0 /* UserListCell.xib */,
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0882405B225B916E00ABCEE0 /* UserListCell.xib in Resources */,
 				0882404A225B8F8B00ABCEE0 /* LaunchScreen.storyboard in Resources */,
 				08824047225B8F8B00ABCEE0 /* Assets.xcassets in Resources */,
 				08824045225B8F8900ABCEE0 /* Main.storyboard in Resources */,
@@ -135,8 +161,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08824042225B8F8900ABCEE0 /* ViewController.swift in Sources */,
+				0882405A225B916E00ABCEE0 /* UserListCell.swift in Sources */,
+				08824054225B909500ABCEE0 /* UserListVM.swift in Sources */,
 				08824040225B8F8900ABCEE0 /* AppDelegate.swift in Sources */,
+				08824052225B907000ABCEE0 /* UserListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
