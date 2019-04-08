@@ -9,22 +9,40 @@
 import UIKit
 
 class UserAlbumsVC: UIViewController {
-
+    // MARK: - Outlets
+    @IBOutlet private weak var collectionVw: UICollectionView!
+    // MARK: - Variables
+    var albums: [Album]?
+    
+    // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        setupView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private methods
+    private func setupView() {
+//        self.vm.delegate = self
+        self.collectionVw.dataSource = self
+        self.collectionVw.register(AlbumCell.nib, forCellWithReuseIdentifier: AlbumCell.identifier)
     }
-    */
 
+}
+
+extension UserAlbumsVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return albums?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? AlbumCell else {
+             return AlbumCell()
+        }
+        
+        return cell
+    }
+    
+    
 }
