@@ -15,6 +15,7 @@ class UserListVC: UIViewController {
     
     // MARK: -
     var vm = UserListVM()
+    private var userList: User?
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,32 +34,37 @@ class UserListVC: UIViewController {
 
 }
 
+ // MARK: - extension
 extension UserListVC: UserListVMDelegate {
+    
     func willCallUserListAPI() {
         // show loading
     }
     
-    func didSuccesUserListAPI() {
+    func didSuccesUserListAPI(users: User) {
         // hide loading
+        
+        userList = users
+        self.tblVwUserList.reloadData()
     }
     
-    func didFailedUserListAPI() {
+    func didFailedUserListAPI(message: String) {
         // hide loading
+        // show message
     }
 }
 
 extension UserListVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.userList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier) as? UserListCell {
+            cell.user = self.userList?[indexPath.row]
             return cell
         } else {
             return UserListCell()
         }
     }
-    
-    
 }

@@ -7,19 +7,33 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol UserListVMDelegate {
     func willCallUserListAPI()
-    func didSuccesUserListAPI()
-    func didFailedUserListAPI()
+    func didSuccesUserListAPI(users: User)
+    func didFailedUserListAPI(message: String)
 }
 
 class UserListVM {
     // MARK: -  variables
     var delegate: UserListVMDelegate?
     
+    private let urlStr = "https://my-json-server.typicode.com/ajumalebrahim/servertest/userList"
+    
     // MARK: - 
     func callUserListAPI() {
-        delegate?.willCallUserListAPI()
+        self.delegate?.willCallUserListAPI()
+        guard let url = URL(string:self.urlStr ) else {
+            return
+        }
+        
+        Alamofire.request(url).responseUser { response in
+            if let user = response.result.value {
+                self.delegate?.didSuccesUserListAPI(users: user)
+            } else {
+                 self.delegate?.didFailedUserListAPI(message: "Something went wrong...")
+            }
+        }
     }
 }

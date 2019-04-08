@@ -15,7 +15,6 @@ class UserListCell: UITableViewCell {
     @IBOutlet private weak var lblName: UILabel!
     @IBOutlet private weak var imgvwAvatar: UIImageView!
     
-    
     // MARK: - Variables
     static var identifier: String {
         return String(describing: self)
@@ -23,6 +22,12 @@ class UserListCell: UITableViewCell {
     
     static var nib: UINib {
         return UINib(nibName: identifier, bundle: nil)
+    }
+    
+    var user: UserElement? {
+        didSet {
+            config()
+        }
     }
     
     // MARK: - override
@@ -40,5 +45,8 @@ class UserListCell: UITableViewCell {
     
     // MARK: - Private methods
     
+    private func config() {
+        self.lblName.text = user?.name
+    }
     
 }

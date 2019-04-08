@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0828ECB0225BA0E900D0EC8E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0828ECAF225BA0E900D0EC8E /* User.swift */; };
 		08824040225B8F8900ABCEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0882403F225B8F8900ABCEE0 /* AppDelegate.swift */; };
 		08824045225B8F8900ABCEE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08824043225B8F8900ABCEE0 /* Main.storyboard */; };
 		08824047225B8F8B00ABCEE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08824046225B8F8B00ABCEE0 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0828ECAF225BA0E900D0EC8E /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0882403C225B8F8900ABCEE0 /* Tandem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tandem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0882403F225B8F8900ABCEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08824044225B8F8900ABCEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0828ECAE225BA0BA00D0EC8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0828ECAF225BA0E900D0EC8E /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		08824033225B8F8900ABCEE0 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		08824056225B90AD00ABCEE0 /* UserList */ = {
 			isa = PBXGroup;
 			children = (
+				0828ECAE225BA0BA00D0EC8E /* Models */,
 				08824057225B914300ABCEE0 /* SubView */,
 				08824051225B907000ABCEE0 /* UserListVC.swift */,
 				08824053225B909500ABCEE0 /* UserListVM.swift */,
@@ -239,6 +250,7 @@
 				0882405A225B916E00ABCEE0 /* UserListCell.swift in Sources */,
 				08824054225B909500ABCEE0 /* UserListVM.swift in Sources */,
 				08824040225B8F8900ABCEE0 /* AppDelegate.swift in Sources */,
+				0828ECB0225BA0E900D0EC8E /* User.swift in Sources */,
 				08824052225B907000ABCEE0 /* UserListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
