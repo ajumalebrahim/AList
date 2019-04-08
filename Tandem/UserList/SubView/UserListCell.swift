@@ -2,7 +2,7 @@
 //  UserListCell.swift
 //  Tandem
 //
-//  Created by Ayman Banani on 4/8/19.
+//  Created by Ajumal Ebrahim on 4/8/19.
 //  Copyright © 2019 Ajumal Ebrahim. All rights reserved.
 //
 
@@ -14,6 +14,16 @@ class UserListCell: UITableViewCell {
     
     @IBOutlet private weak var lblName: UILabel!
     @IBOutlet private weak var imgvwAvatar: UIImageView!
+    
+    
+    // MARK: - Variables
+    static var identifier: String {
+        return String(describing: self)
+    }
+    
+    static var nib: UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
     
     // MARK: - override
     

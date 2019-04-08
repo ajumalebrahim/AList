@@ -2,7 +2,7 @@
 //  UserListVC.swift
 //  Tandem
 //
-//  Created by Ayman Banani on 4/8/19.
+//  Created by Ajumal Ebrahim on 4/8/19.
 //  Copyright © 2019 Ajumal Ebrahim. All rights reserved.
 //
 
@@ -20,13 +20,15 @@ class UserListVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        setupVM()
+        setupView()
         vm.callUserListAPI()
     }
     
     // MARK: - Private methods
-    private func setupVM() {
-        vm.delegate = self
+    private func setupView() {
+        self.vm.delegate = self
+        self.tblVwUserList.dataSource = self
+        self.tblVwUserList.register(UserListCell.nib, forCellReuseIdentifier: UserListCell.identifier)
     }
 
 }
@@ -42,6 +44,20 @@ extension UserListVC: UserListVMDelegate {
     
     func didFailedUserListAPI() {
         // hide loading
+    }
+}
+
+extension UserListVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier) as? UserListCell {
+            return cell
+        } else {
+            return UserListCell()
+        }
     }
     
     
