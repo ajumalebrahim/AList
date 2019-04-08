@@ -7,5 +7,6 @@ target 'Tandem' do
 
   # Pods for Tandem
   pod 'Alamofire'
+  pod 'MBProgressHUD'
 
 end
